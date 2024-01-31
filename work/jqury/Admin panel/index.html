@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="shortcut icon" href="./img/icons8-admin-30.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./jqaury/jquery.js"></script>
+      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+
+<body>
+    <!-- header start -->
+    <header>
+
+        <nav class="nave">
+            <div class="nave-menu-1">
+                <div>
+                    <button class="toggle">
+                        <i class="fa-solid fa-bars "></i>
+                    </button>
+                </div>
+
+                <div class="Search-bar">
+                    <input type="text" class="input" placeholder="  search...">
+                    <div class="search-icon">
+                        <button type="submit" class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="nav-menu-2">
+                <i class="fa-solid fa-bell icon"></i>
+                <i class="fa-solid fa-envelope icon"></i>
+                <div class="profile">
+                    <img src="./img/profile.png" class="pro-img">
+                    <h4>Pravin </h4>
+
+                    <span><i class="fa-solid fa-caret-down  down">
+                        </i></span>
+                    <div class="dropdown-btn">
+                        <ul>
+                            <li><a href="#"><i class="fa-regular fa-user p-icon"></i> Profile</a></li>
+                            <li><a href="#"><i class="fa-solid fa-gear p-icon"></i> Setting</a></li>
+                            <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket p-icon"></i> Log out</a></li>
+                        </ul>
+                    </div>
+                    <i class="fa-solid fa-gear icon"></i>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+    <!-- header end -->
+    <!-- sidebar start -->
+    <aside class="sidebar">
+        <div class="nav-title">
+            <h1 class="nav-title-s">Ad</h1>
+            <h1 class="nav-title-n">min</h1>
+
+        </div>
+        <div class="function">
+            <div class="function-itme">
+                <i class="fa-solid fa-gauge"></i>
+                <h5>Dassbord</h5>
+            </div>
+            <div class="function-itme">
+                <i class="fa-solid fa-droplet"></i>
+                <h5>User Interface</h5>
+            </div>
+            <div class="function-itme">
+                <i class="fa-solid fa-layer-group"></i>
+                <h5>Admin UI</h5>
+            </div>
+            <div class="function-itme">
+                <i class="fa-regular fa-calendar"></i>
+                <h5>Calendar</h5>
+            </div>
+            <div class="function-itme">
+                <i class="fa-solid fa-envelope"></i>
+                <h5>Email</h5>
+            </div>
+            <div class="function-itme">
+                <i class="fa-regular fa-heart"></i>
+                <h5>Icons</h5>
+            </div>
+            <div class="function-itme">
+                <i class="fa-regular fa-gem"></i>
+                <h5>Forms</h5>
+            </div>
+            <div class="function-itme">
+                <i class="fa-solid fa-table-list"></i>
+                <h5>Tables</h5>
+            </div>
+           
+        </div>
+    </aside>
+    <!-- sidebar end -->
+    <section class="container">
+      <!-- back to top -->
+      <a id="button-top"></a>
+      </div>
+        <div id="home" class="chart1 col-12">
+            <div class="card col-4">
+                <div class="chart-container">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+            <div class="card col-4">
+                <div id="chart">
+                    <div id="timeline-chart"></div>
+                  </div>           
+            </div>
+
+        </div>
+        <div class="chart2 col-12">
+            <div class="card col-4">
+                <div class="wrapper">
+
+                    <div class="container-calendar">
+                        <h3 id="monthAndYear"></h3>
+                        
+                        <div class="button-container-calendar">
+                            <button id="previous" onclick="previous()">&#8249;</button>
+                            <button id="next" onclick="next()">&#8250;</button>
+                        </div>
+                        
+                        <table class="table-calendar" id="calendar" data-lang="en">
+                            <thead id="thead-month"></thead>
+                            <tbody id="calendar-body"></tbody>
+                        </table>
+                        
+                        <div class="footer-container-calendar">
+                             <label for="month">Jump To: </label>
+                             <select id="month" onchange="jump()">
+                                 <option value=0>Jan</option>
+                                 <option value=1>Feb</option>
+                                 <option value=2>Mar</option>
+                                 <option value=3>Apr</option>
+                                 <option value=4>May</option>
+                                 <option value=5>Jun</option>
+                                 <option value=6>Jul</option>
+                                 <option value=7>Aug</option>
+                                 <option value=8>Sep</option>
+                                 <option value=9>Oct</option>
+                                 <option value=10>Nov</option>
+                                 <option value=11>Dec</option>
+                             </select>
+                             <select id="year" onchange="jump()"></select>       
+                        </div>
+                
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="card col-4">
+                <div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ7BPby09zybIIFcJHdiE4_-I4fiyWzjw"></script>
+            </div>
+
+
+        </div>
+        <footer class="footer">
+            <p>copy right &copy; 2023</p>
+        </footer>
+    </section>
+    <!-- jqury start -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".profile").click(function () {
+                $(".dropdown-btn").toggle();
+            });
+            $(".toggle").click(function () {
+                $(".sidebar").toggleClass('new-sidebar');
+                $(".nave").toggleClass('new-nave');
+                $(".container").toggleClass('new-container');
+                $(".function-itme").toggleClass('new-function-itme');
+
+            });
+        });
+ // chatrjs
+ var data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+  datasets: [{
+    label: "Dataset #1",
+    backgroundColor: "rgba(255,99,132,0.2)",
+    borderColor: "rgba(255,99,132,1)",
+    borderWidth: 2,
+    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+    hoverBorderColor: "rgba(255,99,132,1)",
+    data: [65, 59, 20, 81, 56, 55, 40],
+  }]
+};
+
+var options = {
+  maintainAspectRatio: false,
+  scales: {
+    y: {
+      stacked: true,
+      grid: {
+        display: true,
+        color: "rgba(255,99,132,0.2)"
+      }
+    },
+    x: {
+      grid: {
+        display: false
+      }
+    }
+  }
+};
+
+new Chart('chart', {
+  type: 'bar',
+  options: options,
+  data: data
+});
+ 
+// apex chart
+var options = {
+      chart: {
+        type: "area",
+        height: 300,
+        foreColor: "#999",
+        stacked: true,
+        dropShadow: {
+          enabled: true,
+          enabledSeries: [0],
+          top: -2,
+          left: 2,
+          blur: 5,
+          opacity: 0.06
+        }
+      },
+      colors: ['#00E396', '#0090FF'],
+      stroke: {
+        curve: "smooth",
+        width: 3
+      },
+      dataLabels: {
+        enabled: false
+      },
+      series: [{
+        name: 'Total Views',
+        data: generateDayWiseTimeSeries(0, 18)
+      }, {
+        name: 'Unique Views',
+        data: generateDayWiseTimeSeries(1, 18)
+      }],
+      markers: {
+        size: 0,
+        strokeColor: "#fff",
+        strokeWidth: 3,
+        strokeOpacity: 1,
+        fillOpacity: 1,
+        hover: {
+          size: 6
+        }
+      },
+      xaxis: {
+        type: "datetime",
+        axisBorder: {
+          show: false
+        },
+        axisTicks: {
+          show: false
+        }
+      },
+      yaxis: {
+        labels: {
+          offsetX: 14,
+          offsetY: -5
+        },
+        tooltip: {
+          enabled: true
+        }
+      },
+      grid: {
+        padding: {
+          left: -5,
+          right: 5
+        }
+      },
+      tooltip: {
+        x: {
+          format: "dd MMM yyyy"
+        },
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'left'
+      },
+      fill: {
+        type: "solid",
+        fillOpacity: 0.7
+      }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#timeline-chart"), options);
+
+    chart.render();
+
+    function generateDayWiseTimeSeries(s, count) {
+      var values = [[
+        4,3,10,9,29,19,25,9,12,7,19,5,13,9,17,2,7,5
+      ], [
+        2,3,8,7,22,16,23,7,11,5,12,5,10,4,15,2,6,2
+      ]];
+      var i = 0;
+      var series = [];
+      var x = new Date("11 Nov 2012").getTime();
+      while (i < count) {
+        series.push([x, values[s][i]]);
+        x += 86400000;
+        i++;
+      }
+      return series;
+    }
+// calender chart
+function generate_year_range(start, end) {
+    var years = "";
+    for (var year = start; year <= end; year++) {
+        years += "<option value='" + year + "'>" + year + "</option>";
+    }
+    return years;
+}
+
+today = new Date();
+currentMonth = today.getMonth();
+currentYear = today.getFullYear();
+selectYear = document.getElementById("year");
+selectMonth = document.getElementById("month");
+
+
+createYear = generate_year_range(1970, 2050);
+/** or
+ * createYear = generate_year_range( 1970, currentYear );
+ */
+
+document.getElementById("year").innerHTML = createYear;
+
+var calendar = document.getElementById("calendar");
+var lang = calendar.getAttribute('data-lang');
+
+var months = "";
+var days = "";
+
+var monthDefault = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+var dayDefault = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+if (lang == "en") {
+    months = monthDefault;
+    days = dayDefault;
+} else if (lang == "id") {
+    months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+    days = ["Ming", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+} else if (lang == "fr") {
+    months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+    days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+} else {
+    months = monthDefault;
+    days = dayDefault;
+}
+
+
+var $dataHead = "<tr>";
+for (dhead in days) {
+    $dataHead += "<th data-days='" + days[dhead] + "'>" + days[dhead] + "</th>";
+}
+$dataHead += "</tr>";
+
+//alert($dataHead);
+document.getElementById("thead-month").innerHTML = $dataHead;
+
+
+monthAndYear = document.getElementById("monthAndYear");
+showCalendar(currentMonth, currentYear);
+
+
+
+function next() {
+    currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
+    currentMonth = (currentMonth + 1) % 12;
+    showCalendar(currentMonth, currentYear);
+}
+
+function previous() {
+    currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+    showCalendar(currentMonth, currentYear);
+}
+
+function jump() {
+    currentYear = parseInt(selectYear.value);
+    currentMonth = parseInt(selectMonth.value);
+    showCalendar(currentMonth, currentYear);
+}
+
+function showCalendar(month, year) {
+
+    var firstDay = ( new Date( year, month ) ).getDay();
+
+    tbl = document.getElementById("calendar-body");
+
+    
+    tbl.innerHTML = "";
+
+    
+    monthAndYear.innerHTML = months[month] + " " + year;
+    selectYear.value = year;
+    selectMonth.value = month;
+
+    // creating all cells
+    var date = 1;
+    for ( var i = 0; i < 6; i++ ) {
+        
+        var row = document.createElement("tr");
+
+        
+        for ( var j = 0; j < 7; j++ ) {
+            if ( i === 0 && j < firstDay ) {
+                cell = document.createElement( "td" );
+                cellText = document.createTextNode("");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            } else if (date > daysInMonth(month, year)) {
+                break;
+            } else {
+                cell = document.createElement("td");
+                cell.setAttribute("data-date", date);
+                cell.setAttribute("data-month", month + 1);
+                cell.setAttribute("data-year", year);
+                cell.setAttribute("data-month_name", months[month]);
+                cell.className = "date-picker";
+                cell.innerHTML = "<span>" + date + "</span>";
+
+                if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
+                    cell.className = "date-picker selected";
+                }
+                row.appendChild(cell);
+                date++;
+            }
+
+
+        }
+
+        tbl.appendChild(row);
+    }
+
+}
+
+function daysInMonth(iMonth, iYear) {
+    return 32 - new Date(iYear, iMonth, 32).getDate();
+}
+
+// map
+// The following example creates complex markers to indicate beaches near
+// Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
+// to the base of the flagpole.
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: new google.maps.LatLng(0, 0),
+    zoom: 0,
+    // center: {
+    //   lat: -33.9,
+    //   lng: 151.2
+    // },
+    center: new google.maps.LatLng(0, 0),
+    styles: [{
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#e9e9e9"
+      }, {
+        "lightness": 17
+      }]
+    }, {
+      "featureType": "landscape",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#f5f5f5"
+      }, {
+        "lightness": 20
+      }]
+    }, {
+      "featureType": "road.highway",
+      "elementType": "geometry.fill",
+      "stylers": [{
+        "color": "#ffffff"
+      }, {
+        "lightness": 17
+      }]
+    }, {
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [{
+        "color": "#ffffff"
+      }, {
+        "lightness": 29
+      }, {
+        "weight": 0.2
+      }]
+    }, {
+      "featureType": "road.arterial",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#ffffff"
+      }, {
+        "lightness": 18
+      }]
+    }, {
+      "featureType": "road.local",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#ffffff"
+      }, {
+        "lightness": 16
+      }]
+    }, {
+      "featureType": "poi",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#f5f5f5"
+      }, {
+        "lightness": 21
+      }]
+    }, {
+      "featureType": "poi.park",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#dedede"
+      }, {
+        "lightness": 21
+      }]
+    }, {
+      "elementType": "labels.text.stroke",
+      "stylers": [{
+        "visibility": "on"
+      }, {
+        "color": "#ffffff"
+      }, {
+        "lightness": 16
+      }]
+    }, {
+      "elementType": "labels.text.fill",
+      "stylers": [{
+        "saturation": 36
+      }, {
+        "color": "#333333"
+      }, {
+        "lightness": 40
+      }]
+    }, {
+      "elementType": "labels.icon",
+      "stylers": [{
+        "visibility": "off"
+      }]
+    }, {
+      "featureType": "transit",
+      "elementType": "geometry",
+      "stylers": [{
+        "color": "#f2f2f2"
+      }, {
+        "lightness": 19
+      }]
+    }, {
+      "featureType": "administrative",
+      "elementType": "geometry.fill",
+      "stylers": [{
+        "color": "#fefefe"
+      }, {
+        "lightness": 20
+      }]
+    }, {
+      "featureType": "administrative",
+      "elementType": "geometry.stroke",
+      "stylers": [{
+        "color": "#fefefe"
+      }, {
+        "lightness": 17
+      }, {
+        "weight": 1.2
+      }]
+    }]
+  });
+  setMarkers(map);
+}
+// Data for the markers consisting of a name, a LatLng and a zIndex for the
+// order in which these markers should display on top of each other.
+const beaches = [
+  ["8061 Lougheed Hwy, Burnaby, BC V5A 1W9", -33.890542, 151.274856],
+  ["Coogee Beach", -33.923036, 151.259052],
+  ["Cronulla Beach", -34.028249, 151.157507],
+  ["Manly Beach", -33.80010128657071, 151.28747820854187],
+  ["Maroubra Beach", -33.950198, 151.259302],
+];
+
+function setMarkers(map) {
+  // Adds markers to the map.
+  // Marker sizes are expressed as a Size of X,Y where the origin of the image
+  // (0,0) is located in the top left of the image.
+  // Origins, anchor positions and coordinates of the marker increase in the X
+  // direction to the right and in the Y direction down.
+  const image = {
+    url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+    labelOrigin: new google.maps.Point(130, 10),
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 32),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(11, 40),
+  };
+  // Shapes define the clickable region of the icon. The type defines an HTML
+  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+  // The final coordinate closes the poly by connecting to the first coordinate.
+  const shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: "poly",
+  };
+  
+  const bounds = new google.maps.LatLngBounds();
+  for (let i = 0; i < beaches.length; i++) {
+    const beach = beaches[i];
+    marker = new google.maps.Marker({
+      position: {
+        lat: beach[1],
+        lng: beach[2]
+      },
+      map,
+      icon: image,
+      shape: shape,
+      label: {
+        color: 'black',
+        fontWeight: 'bold',
+        text: beach[0],
+      },
+      zIndex: beach[3],
+    });
+    bounds.extend(marker.position);
+  }
+  map.fitBounds(bounds);
+
+  var listener = google.maps.event.addListener(map, "idle", function () {
+    map.setZoom(10);
+    google.maps.event.removeListener(listener);
+  });
+}
+initMap();
+// back to top button
+var btn = $('#button-top');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 100) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '100');
+});
+    </script>
+    <!-- jqury end -->
+</body>
+
+</html>
